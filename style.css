@@ -552,12 +552,12 @@ body{
   gap:12px;
 }
 
-.payment-list label{
+.payment-item{
   display:flex;
 
-  align-items:center;
+  align-items:flex-start;
 
-  gap:10px;
+  gap:12px;
 
   background:
   rgba(255,255,255,.05);
@@ -574,7 +574,7 @@ body{
   cursor:pointer;
 }
 
-.payment-list label:hover{
+.payment-item:hover{
   border-color:#00d9ff;
 
   box-shadow:
@@ -583,10 +583,69 @@ body{
   transform:translateY(-2px);
 }
 
-.payment-list input{
+.payment-item input{
+  margin-top:4px;
+
   accent-color:#00d9ff;
 
   transform:scale(1.1);
+}
+
+.payment-info{
+  width:100%;
+}
+
+.payment-top{
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-weight:600;
+
+  font-size:15px;
+}
+
+.payment-top i{
+  color:#00d9ff;
+}
+
+.payment-detail{
+  margin-top:10px;
+
+  padding-left:28px;
+
+  color:#9aa4b2;
+
+  font-size:14px;
+
+  line-height:1.7;
+}
+
+.payment-detail small{
+  color:white;
+
+  opacity:.7;
+}
+
+/* =========================
+   QRIS IMAGE
+========================= */
+
+.qris-image{
+  width:100%;
+
+  margin-top:14px;
+
+  border-radius:18px;
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  background:white;
+
+  padding:8px;
 }
 
 /* =========================
@@ -745,6 +804,10 @@ body{
 
   .modal-price{
     font-size:26px;
+  }
+
+  .payment-detail{
+    padding-left:0;
   }
 
 }
