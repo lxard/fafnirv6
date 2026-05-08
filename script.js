@@ -24,7 +24,7 @@ function renderPayments(){
 
     paymentList.innerHTML += `
 
-      <label>
+      <label class="payment-item">
 
         <input
           type="radio"
@@ -32,11 +32,46 @@ function renderPayments(){
           value="${method.name}"
         >
 
-        <i class="${method.icon}"></i>
+        <div class="payment-info">
 
-        <span>
-          ${method.name}
-        </span>
+          <div class="payment-top">
+
+            <i class="${method.icon}"></i>
+
+            <span>
+              ${method.name}
+            </span>
+
+          </div>
+
+          ${
+            method.image ?
+
+            `
+            <img
+              src="${method.image}"
+              class="qris-image"
+            >
+            `
+
+            :
+
+            `
+            <div class="payment-detail">
+
+              ${method.number}
+
+              <br>
+
+              <small>
+                A/N ${method.owner}
+              </small>
+
+            </div>
+            `
+          }
+
+        </div>
 
       </label>
 
@@ -45,8 +80,6 @@ function renderPayments(){
   });
 
 }
-
-renderPayments();
 
 /* =========================
    CREATE PRODUCT CARD
