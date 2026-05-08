@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FafnirGank Marketplace</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2d9d6d66b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Background Glow -->
+  <div class="bg-glow"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+
+    <div class="logo">
+      FAFNIRGANK MARKETPLACE
+    </div>
+
+    <div class="menu">
+      <a href="#products">Produk</a>
+      <a href="#store">Store</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Premium Digital & Physical Store
+      </h1>
+
+      <p>
+        Fast Process • Trusted • Modern Cyber Experience
+      </p>
+
+      <button onclick="scrollToProducts()">
+        Explore Products
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- Produk Digital -->
+  <section id="products" class="products-section">
+
+    <div class="section-title">
+      Produk Digital
+    </div>
+
+    <div id="product-list" class="product-grid"></div>
+
+  </section>
+
+  <!-- Store Product -->
+  <section id="store" class="products-section">
+
+    <div class="section-title">
+      Store Products
+    </div>
+
+    <div id="store-list" class="product-grid"></div>
+
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="products-section">
+
+    <div class="section-title">
+      Contact
+    </div>
+
+    <div class="contact-box">
+
+      <p>
+        Hubungi admin untuk informasi lebih lanjut.
+      </p>
+
+      <a
+        href="https://wa.me/6281234567890"
+        target="_blank"
+        class="contact-btn"
+      >
+        WhatsApp Admin
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- Modal -->
+  <div id="productModal" class="modal hidden">
+
+    <div class="modal-content">
+
+      <button
+        class="close-btn"
+        onclick="closeModal()"
+      >
+        ×
+      </button>
+
+      <img id="modalImage" src="">
+
+      <h2 id="modalTitle"></h2>
+
+      <p id="modalDesc"></p>
+
+      <div
+        class="modal-price"
+        id="modalPrice"
+      ></div>
+
+      <div class="payment-title">
+        Metode Pembayaran
+      </div>
+
+      <div class="payment-list">
+
+        <label>
+          <input
+            type="radio"
+            name="payment"
+            value="Dana"
+          >
+          Dana
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="payment"
+            value="OVO"
+          >
+          OVO
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="payment"
+            value="QRIS"
+          >
+          QRIS
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="payment"
+            value="Bank Transfer"
+          >
+          Bank Transfer
+        </label>
+
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="buyNow()"
+      >
+        BELI SEKARANG
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2026 FafnirGank Marketplace
+  </footer>
+
+  <!-- Config -->
+  <script src="config.js"></script>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
