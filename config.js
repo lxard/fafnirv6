@@ -42,7 +42,7 @@ const payments = [
     name:'QRIS',
     icon:'fas fa-qrcode',
 
-    image:'assets/qris.jpg',
+    image:'/qr.jpg',
 
     owner:'FAFNIR STORE'
   }
