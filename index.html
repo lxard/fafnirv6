@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FafnirGank Marketplace</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    FafnirGank Marketplace
+  </title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a2d9d6d66b.js" crossorigin="anonymous"></script>
+  <script
+    src="https://kit.fontawesome.com/a2d9d6d66b.js"
+    crossorigin="anonymous"
+  ></script>
+
 </head>
 
 <body>
@@ -26,7 +49,10 @@
   <!-- Background Glow -->
   <div class="bg-glow"></div>
 
-  <!-- Navbar -->
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
   <nav class="navbar">
 
     <div class="logo">
@@ -34,20 +60,35 @@
     </div>
 
     <div class="menu">
-      <a href="#products">Produk</a>
-      <a href="#store">Store</a>
-      <a href="#contact">Contact</a>
+
+      <a href="#products">
+        Produk
+      </a>
+
+      <a href="#store">
+        Store
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </div>
 
   </nav>
 
-  <!-- Hero -->
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <section class="hero">
 
     <div class="hero-content">
 
       <h1>
-        Premium Digital & Physical Store
+        Premium Digital
+        &
+        Physical Store
       </h1>
 
       <p>
@@ -62,30 +103,54 @@
 
   </section>
 
-  <!-- Produk Digital -->
-  <section id="products" class="products-section">
+  <!-- =========================
+       DIGITAL PRODUCTS
+  ========================== -->
+
+  <section
+    id="products"
+    class="products-section"
+  >
 
     <div class="section-title">
       Produk Digital
     </div>
 
-    <div id="product-list" class="product-grid"></div>
+    <div
+      id="product-list"
+      class="product-grid"
+    ></div>
 
   </section>
 
-  <!-- Store Product -->
-  <section id="store" class="products-section">
+  <!-- =========================
+       STORE PRODUCTS
+  ========================== -->
+
+  <section
+    id="store"
+    class="products-section"
+  >
 
     <div class="section-title">
       Store Products
     </div>
 
-    <div id="store-list" class="product-grid"></div>
+    <div
+      id="store-list"
+      class="product-grid"
+    ></div>
 
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="products-section">
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section
+    id="contact"
+    class="products-section"
+  >
 
     <div class="section-title">
       Contact
@@ -98,10 +163,12 @@
       </p>
 
       <a
-        href="https://wa.me/6281234567890"
+        href="https://wa.me/6285921967820"
         target="_blank"
         class="contact-btn"
       >
+        <i class="fab fa-whatsapp"></i>
+
         WhatsApp Admin
       </a>
 
@@ -109,11 +176,18 @@
 
   </section>
 
-  <!-- Modal -->
-  <div id="productModal" class="modal hidden">
+  <!-- =========================
+       MODAL
+  ========================== -->
+
+  <div
+    id="productModal"
+    class="modal hidden"
+  >
 
     <div class="modal-content">
 
+      <!-- CLOSE -->
       <button
         class="close-btn"
         onclick="closeModal()"
@@ -121,65 +195,43 @@
         ×
       </button>
 
-      <img id="modalImage" src="">
+      <!-- IMAGE -->
+      <img
+        id="modalImage"
+        src=""
+        alt="Preview Produk"
+      >
 
+      <!-- TITLE -->
       <h2 id="modalTitle"></h2>
 
+      <!-- DESC -->
       <p id="modalDesc"></p>
 
+      <!-- PRICE -->
       <div
         class="modal-price"
         id="modalPrice"
       ></div>
 
+      <!-- PAYMENT -->
       <div class="payment-title">
         Metode Pembayaran
       </div>
 
-      <div class="payment-list">
+      <!-- AUTO RENDER PAYMENT -->
+      <div
+        class="payment-list"
+        id="paymentList"
+      ></div>
 
-        <label>
-          <input
-            type="radio"
-            name="payment"
-            value="Dana"
-          >
-          Dana
-        </label>
-
-        <label>
-          <input
-            type="radio"
-            name="payment"
-            value="OVO"
-          >
-          OVO
-        </label>
-
-        <label>
-          <input
-            type="radio"
-            name="payment"
-            value="QRIS"
-          >
-          QRIS
-        </label>
-
-        <label>
-          <input
-            type="radio"
-            name="payment"
-            value="Bank Transfer"
-          >
-          Bank Transfer
-        </label>
-
-      </div>
-
+      <!-- BUY BUTTON -->
       <button
         class="buy-btn"
         onclick="buyNow()"
       >
+        <i class="fas fa-shopping-cart"></i>
+
         BELI SEKARANG
       </button>
 
@@ -187,15 +239,21 @@
 
   </div>
 
-  <!-- Footer -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer class="footer">
-    © 2026 FafnirGank Marketplace
+
+    © 2026
+    FafnirGank Marketplace
+
   </footer>
 
-  <!-- Config -->
+  <!-- CONFIG -->
   <script src="config.js"></script>
 
-  <!-- Script -->
+  <!-- SCRIPT -->
   <script src="script.js"></script>
 
 </body>
