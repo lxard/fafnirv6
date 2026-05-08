@@ -7,7 +7,46 @@ document.getElementById("store-list");
 const modal =
 document.getElementById("productModal");
 
+const paymentList =
+document.querySelector(".payment-list");
+
 let selectedProduct = null;
+
+/* =========================
+   RENDER PAYMENT METHODS
+========================= */
+
+function renderPayments(){
+
+  paymentList.innerHTML = "";
+
+  payments.forEach(method => {
+
+    paymentList.innerHTML += `
+
+      <label>
+
+        <input
+          type="radio"
+          name="payment"
+          value="${method.name}"
+        >
+
+        <i class="${method.icon}"></i>
+
+        <span>
+          ${method.name}
+        </span>
+
+      </label>
+
+    `;
+
+  });
+
+}
+
+renderPayments();
 
 /* =========================
    CREATE PRODUCT CARD
@@ -55,6 +94,7 @@ function createCard(product, target){
     </div>
 
   `;
+
 }
 
 /* =========================
@@ -62,11 +102,21 @@ function createCard(product, target){
 ========================= */
 
 digitalProducts.forEach(product => {
-  createCard(product, productList);
+
+  createCard(
+    product,
+    productList
+  );
+
 });
 
 storeProducts.forEach(product => {
-  createCard(product, storeList);
+
+  createCard(
+    product,
+    storeList
+  );
+
 });
 
 /* =========================
@@ -78,6 +128,9 @@ function openModal(product){
   selectedProduct = product;
 
   modal.classList.remove("hidden");
+
+  document.body.style.overflow =
+  "hidden";
 
   document.getElementById("modalImage").src =
   product.image;
@@ -91,6 +144,17 @@ function openModal(product){
   document.getElementById("modalPrice").innerText =
   product.price;
 
+  // reset payment
+  document
+  .querySelectorAll(
+    'input[name="payment"]'
+  )
+  .forEach(input => {
+
+    input.checked = false;
+
+  });
+
 }
 
 /* =========================
@@ -100,6 +164,9 @@ function openModal(product){
 function closeModal(){
 
   modal.classList.add("hidden");
+
+  document.body.style.overflow =
+  "auto";
 
 }
 
@@ -124,12 +191,14 @@ function buyNow(){
   }
 
   const message =
-`Halo admin, saya ingin membeli:
+`Halo admin 👋
+
+Saya ingin membeli produk berikut:
 
 ━━━━━━━━━━━━━━━
-Produk : ${selectedProduct.name}
-Harga : ${selectedProduct.price}
-Pembayaran : ${payment.value}
+🛒 Produk : ${selectedProduct.name}
+💰 Harga : ${selectedProduct.price}
+💳 Payment : ${payment.value}
 ━━━━━━━━━━━━━━━
 
 Mohon diproses ya admin 🙌`;
