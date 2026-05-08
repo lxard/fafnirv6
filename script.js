@@ -8,7 +8,7 @@ const modal =
 document.getElementById("productModal");
 
 const paymentList =
-document.querySelector(".payment-list");
+document.getElementById("paymentList");
 
 let selectedProduct = null;
 
@@ -48,26 +48,31 @@ function renderPayments(){
             method.image ?
 
             `
+
             <img
               src="${method.image}"
+              alt="${method.name}"
               class="qris-image"
             >
+
             `
 
             :
 
             `
+
             <div class="payment-detail">
 
-              ${method.number}
-
-              <br>
+              <div class="payment-number">
+                ${method.number}
+              </div>
 
               <small>
                 A/N ${method.owner}
               </small>
 
             </div>
+
             `
           }
 
@@ -177,16 +182,8 @@ function openModal(product){
   document.getElementById("modalPrice").innerText =
   product.price;
 
-  // reset payment
-  document
-  .querySelectorAll(
-    'input[name="payment"]'
-  )
-  .forEach(input => {
-
-    input.checked = false;
-
-  });
+  // render payment
+  renderPayments();
 
 }
 
@@ -223,6 +220,26 @@ function buyNow(){
     return;
   }
 
+  const selectedMethod =
+  payments.find(
+    item => item.name === payment.value
+  );
+
+  let paymentInfo = "";
+
+  if(selectedMethod.image){
+
+    paymentInfo =
+    `Scan QRIS yang tersedia`;
+
+  }else{
+
+    paymentInfo =
+`${selectedMethod.number}
+A/N ${selectedMethod.owner}`;
+
+  }
+
   const message =
 `Halo admin 👋
 
@@ -232,6 +249,9 @@ Saya ingin membeli produk berikut:
 🛒 Produk : ${selectedProduct.name}
 💰 Harga : ${selectedProduct.price}
 💳 Payment : ${payment.value}
+
+📌 Tujuan Pembayaran:
+${paymentInfo}
 ━━━━━━━━━━━━━━━
 
 Mohon diproses ya admin 🙌`;
