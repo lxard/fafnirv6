@@ -13,32 +13,38 @@ const payments = [
 
   {
     name:'Dana',
-    icon:'fas fa-wallet'
+    icon:'fas fa-wallet',
+
+    number:'083895079009',
+
+    owner:'Rahmad Prasetiyo'
   },
 
   {
     name:'OVO',
-    icon:'fas fa-money-bill-wave'
+    icon:'fas fa-money-bill-wave',
+
+    number:'083895079009',
+
+    owner:'Rahmad Prasetiyo'
   },
 
   {
     name:'GoPay',
-    icon:'fas fa-mobile-alt'
+    icon:'fas fa-mobile-alt',
+
+    number:'083895079009',
+
+    owner:'Rahmad Prasetiyo'
   },
 
   {
     name:'QRIS',
-    icon:'fas fa-qrcode'
-  },
+    icon:'fas fa-qrcode',
 
-  {
-    name:'ShopeePay',
-    icon:'fas fa-shopping-bag'
-  },
+    image:'assets/qris.jpg',
 
-  {
-    name:'Bank Transfer',
-    icon:'fas fa-university'
+    owner:'FAFNIR STORE'
   }
 
 ];
